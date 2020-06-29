@@ -32,7 +32,7 @@ flutter run
 
 ## Sample
 <p align="center">
-  <img src="sample/samples.gif" width="1000" title="Sample 1">
+  <img src="sample/samples.gif" width="300" title="Sample 1">
 </p>
 
 # Reference
