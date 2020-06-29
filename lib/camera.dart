@@ -101,6 +101,7 @@ class _CameraState extends State<Camera> {
     }
 
     var tmp = MediaQuery.of(context).size;
+    double height = MediaQuery.of(context).size.height;
 
     var screenW = math.min(tmp.height, tmp.width);
     tmp = controller.value.previewSize;
@@ -110,7 +111,7 @@ class _CameraState extends State<Camera> {
     return Container(
       child: CameraPreview(controller),
       constraints: BoxConstraints(
-          maxHeight: 500,
+          maxHeight: height/1.5,
         maxWidth: screenW,
       )  ,
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+
 
 
 class Render extends StatelessWidget {
@@ -18,36 +20,55 @@ class Render extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
+    double height = MediaQuery.of(context).size.height;
+    double ht = (height/1.5)+20;
+    double width = MediaQuery.of(context).size.width;
+    
     return MaterialApp(
+        
+        debugShowCheckedModeBanner: false,
+        home:Container(
+          width : width,
+          child: ListView(
+                physics: NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(vertical: ht,horizontal: 25),
+                children: results != null
+                    ? results.map((res) {
+                    SizedBox(height:10);
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 13),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        
+                        LinearPercentIndicator(
+                        progressColor: Colors.greenAccent,
+                        width: width/1.6,
+                        lineHeight: 20.0,
+                        percent: res["confidence"],
+                        center: Text(
+                          "${(res['confidence'] * 100).toStringAsFixed(0)}%",
+                          style: new TextStyle(fontSize: 12.0),
+                        ),),
+                        Text(
+                            "${res["label"]}",
+                            style: TextStyle(
+                              color: Colors.greenAccent,
+                              fontSize: 18.0,
+                              decoration: TextDecoration.none,
+                            ),
 
-      home: Align(alignment: Alignment.bottomLeft,
-        child: RotatedBox(quarterTurns: 0 ,
-                            child: ListView(
-          padding : ///const EdgeInsets.fromLTRB(40.0, 450.0, 20.0, 0.0)
-            const EdgeInsets.fromLTRB(520.0, 80.0, .0, 0.0),
-
-          children: results != null
-              ? results.map((res) {
-
-            return Text(
-              "${res["label"]}: ${(res["confidence"] * 100).toStringAsFixed(0)}%",
-              style: TextStyle(
-                color: Color.fromRGBO(37, 213, 253, 1.0),
-                fontSize: 18.0,
+                          ),
+                
+                      ],
+                    ),
+                  );
+                }).toList()
+                    : [],
 
               ),
-
-            );
-          }).toList()
-              : [],
-
-        )),
-      ),
-
-    );
-
+              ),
+        );
   }
 
 

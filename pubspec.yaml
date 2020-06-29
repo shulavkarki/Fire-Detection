@@ -28,6 +28,7 @@ dev_dependencies:
 
   tflite: 1.0.1
 
+  percent_indicator: ^2.1.4
 
 
 
@@ -74,3 +75,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+module:
+  androidX: true
