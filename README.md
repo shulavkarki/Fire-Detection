@@ -36,8 +36,8 @@ flutter run
 </p>
 
 # Reference
-1. [medium].(https://medium.com/innovation-incubator/real-time-image-classification-on-android-using-flutter-tflite-2674f03caf0f)
-2. [code].(https://github.com/kr1210/Flutter-Real-Time-Image-Classification)
+1. [medium](https://medium.com/innovation-incubator/real-time-image-classification-on-android-using-flutter-tflite-2674f03caf0f)
+2. [code](https://github.com/kr1210/Flutter-Real-Time-Image-Classification)
 
 # Note:
 > This is just a sample to detect fire. However, this system is not feasible and efficient in field.
