@@ -28,8 +28,9 @@ A technical solution to this problem can be:
 flutter packages get
 ```
 # Run
+```
 flutter run
-
+```
 ## Sample
 <p align="center">
   <img src="sample/samples.gif" width="300" title="Sample 1">
